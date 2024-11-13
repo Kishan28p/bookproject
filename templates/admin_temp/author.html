@@ -1,0 +1,15 @@
+
+{% extends 'admin_temp/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<h1 class="fw-bold">Add Author</h1>
+<form method="post">
+
+    {%csrf_token%}
+    {{form.as_p}}
+    <input type="submit" value="save" class="btn btn-success">
+</form>
+
+{% endblock %}

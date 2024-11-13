@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</head>
+<body>
+{% for msg in messages %}
+{{ msg }}
+{% endfor %}
+<div class="container w-25">
+    <div class="container shadow-lg rounded" style="background-color:#cd82fa; color:black;">
+        <h3 class="fw-bold d-flex justify-content-center p-2" style="margin-top:100px;">Login</h3>
+    </div>
+
+    <div class="container  shadow-lg p-3 mb-5  rounded" style="background-color:#d4c5e3;">
+        <form action="" method="post" >
+        {% csrf_token %}
+    <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" class="form-control" placeholder="Enter username" id="username" name="username">
+    </div>
+    <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" placeholder="Enter password" id="pwd" name="password">
+    </div>
+    <input class="btn btn-block d-flex justify-content-center text-light" style="background-color:#3b0260;" type="submit" value="Login">
+            <div><p>Dont have any account?</p><a href="{% url 'authapp:register' %}">Create account</a></div>
+</form>
+
+</div>
+
+</div>
+
+
+
+
+</body>
+</html>
